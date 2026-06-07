@@ -1,0 +1,271 @@
+2026-06-07T14:29:43.023810+0700 | INFO | Web search: TẮT
+2026-06-07T14:29:43.038719+0700 | INFO | Đã sao lưu workspace cũ sang: ..\backup\workspace_backup_2026-06-07_14-29-43
+2026-06-07T14:29:43.044488+0700 | INFO | Đã làm sạch thư mục workspace.
+2026-06-07T14:29:43.052779+0700 | INFO | Pipeline bắt đầu: Train RandomForest phân loại Iris dataset, lưu model, load và predict...
+2026-06-07T14:29:43.055887+0700 | INFO | Project type: ml
+2026-06-07T14:29:43.055887+0700 | INFO | =======================================================
+2026-06-07T14:29:43.056671+0700 | INFO | ARCHITECT bắt đầu
+2026-06-07T14:29:43.056671+0700 | INFO | Searching: Python ml best practices 2025
+2026-06-07T14:29:43.961627+0700 | SUCCESS | Search xong: 31 ký tự
+2026-06-07T14:29:43.962488+0700 | INFO | [Architect] Searched: Python ml best practices 2025
+2026-06-07T14:29:43.962488+0700 | INFO | Searching: scikit-learn latest version usage
+2026-06-07T14:29:45.233945+0700 | SUCCESS | Search xong: 233 ký tự
+2026-06-07T14:29:45.234916+0700 | INFO | [Architect] Searched: scikit-learn latest version usage
+2026-06-07T14:29:45.234916+0700 | INFO | Architect search log:
+✓ Python ml best practices 2025
+✓ scikit-learn latest version usage
+2026-06-07T14:29:45.234916+0700 | INFO | [Architect] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:30:14.920186+0700 | INFO | [Architect] Nhận response — 3865 ký tự
+2026-06-07T14:30:14.920186+0700 | SUCCESS | ARCHITECT xong — 3865 ký tự
+2026-06-07T14:30:14.920706+0700 | INFO | Context Architect bị xóa. Chỉ giữ architecture.md
+2026-06-07T14:30:14.921234+0700 | INFO | =======================================================
+2026-06-07T14:30:14.921234+0700 | INFO | TESTER bắt đầu (không cần search — dùng architecture đã đủ)
+2026-06-07T14:30:14.921234+0700 | INFO | [Tester] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:30:41.251341+0700 | INFO | [Tester] Nhận response — 3884 ký tự
+2026-06-07T14:30:41.251843+0700 | SUCCESS | TESTER xong — 3870 ký tự
+2026-06-07T14:30:41.251843+0700 | INFO | Context Tester bị xóa.
+2026-06-07T14:30:41.252361+0700 | INFO | =======================================================
+2026-06-07T14:30:41.252361+0700 | INFO | DEVELOPER bắt đầu — lần thử 1/3
+2026-06-07T14:30:41.252918+0700 | INFO | [Developer-1] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:31:08.725689+0700 | INFO | [Developer-1] Nhận response — 4106 ký tự
+2026-06-07T14:31:08.726339+0700 | SUCCESS | DEVELOPER xong — 4092 ký tự
+2026-06-07T14:31:08.726339+0700 | INFO | Context Developer bị xóa.
+2026-06-07T14:31:08.726860+0700 | INFO | ==================================================
+2026-06-07T14:31:08.726860+0700 | INFO | COMPILER bắt đầu
+2026-06-07T14:31:08.729462+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/data_preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/predictor.py, main.py
+2026-06-07T14:31:08.729990+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T14:31:08.731566+0700 | INFO | Chạy pytest...
+2026-06-07T14:31:11.795681+0700 | WARNING | COMPILER: Test FAIL
+=================================== ERRORS ====================================
+___________________ ERROR collecting tests/test_pipeline.py ___________________
+tests\test_pipeline.py:7: in <module>
+src\model_trainer.py:5: in <module>
+src\model_trainer.py:6: in RandomForestTrainer
+E   NameError: name 'Optional' is not defined
+=========================== short test summary info ===========================
+ERROR tests/test_pipeline.py - NameError: name 'Optional' is not defined
+---
+================...
+2026-06-07T14:31:11.796682+0700 | WARNING | dev_retries=1 < 5 → retry Developer
+2026-06-07T14:31:11.796682+0700 | INFO | =======================================================
+2026-06-07T14:31:11.797681+0700 | INFO | DEVELOPER bắt đầu — lần thử 2/3
+2026-06-07T14:31:11.797681+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T14:31:11.797681+0700 | INFO | [Developer-2] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:31:39.658421+0700 | INFO | [Developer-2] Nhận response — 4122 ký tự
+2026-06-07T14:31:39.658935+0700 | SUCCESS | DEVELOPER xong — 4108 ký tự
+2026-06-07T14:31:39.658935+0700 | INFO | Context Developer bị xóa.
+2026-06-07T14:31:39.658935+0700 | INFO | ==================================================
+2026-06-07T14:31:39.659452+0700 | INFO | COMPILER bắt đầu
+2026-06-07T14:31:39.664671+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/data_preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/predictor.py, main.py
+2026-06-07T14:31:39.665304+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T14:31:39.665831+0700 | INFO | Chạy pytest...
+2026-06-07T14:31:42.651089+0700 | WARNING | COMPILER: Test FAIL
+=================================== ERRORS ====================================
+___________________ ERROR collecting tests/test_pipeline.py ___________________
+tests\test_pipeline.py:7: in <module>
+src\model_trainer.py:5: in <module>
+src\model_trainer.py:11: in RandomForestTrainer
+E   NameError: name 'pd' is not defined
+=========================== short test summary info ===========================
+ERROR tests/test_pipeline.py - NameError: name 'pd' is not defined
+---
+===========================...
+2026-06-07T14:31:42.651495+0700 | WARNING | dev_retries=2 < 5 → retry Developer
+2026-06-07T14:31:42.652000+0700 | INFO | =======================================================
+2026-06-07T14:31:42.652000+0700 | INFO | DEVELOPER bắt đầu — lần thử 3/3
+2026-06-07T14:31:42.652000+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T14:31:42.652000+0700 | INFO | [Developer-3] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:32:10.027709+0700 | INFO | [Developer-3] Nhận response — 4122 ký tự
+2026-06-07T14:32:10.028223+0700 | SUCCESS | DEVELOPER xong — 4108 ký tự
+2026-06-07T14:32:10.028223+0700 | INFO | Context Developer bị xóa.
+2026-06-07T14:32:10.028735+0700 | INFO | ==================================================
+2026-06-07T14:32:10.028735+0700 | INFO | COMPILER bắt đầu
+2026-06-07T14:32:10.033447+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/data_preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/predictor.py, main.py
+2026-06-07T14:32:10.034480+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T14:32:10.034480+0700 | INFO | Chạy pytest...
+2026-06-07T14:32:13.024292+0700 | WARNING | COMPILER: Test FAIL
+=================================== ERRORS ====================================
+___________________ ERROR collecting tests/test_pipeline.py ___________________
+tests\test_pipeline.py:7: in <module>
+src\model_trainer.py:5: in <module>
+src\model_trainer.py:11: in RandomForestTrainer
+E   NameError: name 'pd' is not defined
+=========================== short test summary info ===========================
+ERROR tests/test_pipeline.py - NameError: name 'pd' is not defined
+---
+===========================...
+2026-06-07T14:32:13.024814+0700 | WARNING | dev_retries=3 < 5 → retry Developer
+2026-06-07T14:32:13.025319+0700 | INFO | =======================================================
+2026-06-07T14:32:13.025319+0700 | INFO | DEVELOPER bắt đầu — lần thử 4/3
+2026-06-07T14:32:13.025839+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T14:32:13.025839+0700 | INFO | [Developer-4] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:32:40.136407+0700 | INFO | [Developer-4] Nhận response — 4122 ký tự
+2026-06-07T14:32:40.136938+0700 | SUCCESS | DEVELOPER xong — 4108 ký tự
+2026-06-07T14:32:40.136938+0700 | INFO | Context Developer bị xóa.
+2026-06-07T14:32:40.137447+0700 | INFO | ==================================================
+2026-06-07T14:32:40.137447+0700 | INFO | COMPILER bắt đầu
+2026-06-07T14:32:40.143935+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/data_preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/predictor.py, main.py
+2026-06-07T14:32:40.144983+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T14:32:40.144983+0700 | INFO | Chạy pytest...
+2026-06-07T14:32:43.152902+0700 | WARNING | COMPILER: Test FAIL
+=================================== ERRORS ====================================
+___________________ ERROR collecting tests/test_pipeline.py ___________________
+tests\test_pipeline.py:7: in <module>
+src\model_trainer.py:5: in <module>
+src\model_trainer.py:11: in RandomForestTrainer
+E   NameError: name 'pd' is not defined
+=========================== short test summary info ===========================
+ERROR tests/test_pipeline.py - NameError: name 'pd' is not defined
+---
+===========================...
+2026-06-07T14:32:43.153250+0700 | WARNING | dev_retries=4 < 5 → retry Developer
+2026-06-07T14:32:43.154274+0700 | INFO | =======================================================
+2026-06-07T14:32:43.154274+0700 | INFO | DEVELOPER bắt đầu — lần thử 5/3
+2026-06-07T14:32:43.154274+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T14:32:43.154274+0700 | INFO | [Developer-5] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:33:09.862916+0700 | INFO | [Developer-5] Nhận response — 4122 ký tự
+2026-06-07T14:33:09.862916+0700 | SUCCESS | DEVELOPER xong — 4108 ký tự
+2026-06-07T14:33:09.863437+0700 | INFO | Context Developer bị xóa.
+2026-06-07T14:33:09.863954+0700 | INFO | ==================================================
+2026-06-07T14:33:09.863954+0700 | INFO | COMPILER bắt đầu
+2026-06-07T14:33:09.869696+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/data_preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/predictor.py, main.py
+2026-06-07T14:33:09.870287+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T14:33:09.870287+0700 | INFO | Chạy pytest...
+2026-06-07T14:33:12.860214+0700 | WARNING | COMPILER: Test FAIL
+=================================== ERRORS ====================================
+___________________ ERROR collecting tests/test_pipeline.py ___________________
+tests\test_pipeline.py:7: in <module>
+src\model_trainer.py:5: in <module>
+src\model_trainer.py:11: in RandomForestTrainer
+E   NameError: name 'pd' is not defined
+=========================== short test summary info ===========================
+ERROR tests/test_pipeline.py - NameError: name 'pd' is not defined
+---
+===========================...
+2026-06-07T14:33:12.860934+0700 | ERROR | dev_retries=5 >= 5 → ESCALATE về Architect (arch #1)
+2026-06-07T14:33:12.861449+0700 | INFO | =======================================================
+2026-06-07T14:33:12.861449+0700 | INFO | ARCHITECT bắt đầu
+2026-06-07T14:33:12.861449+0700 | DEBUG | Search cache hit: Python ml best practices 2025
+2026-06-07T14:33:12.861449+0700 | INFO | [Architect] Searched: Python ml best practices 2025
+2026-06-07T14:33:12.861963+0700 | DEBUG | Search cache hit: scikit-learn latest version usage
+2026-06-07T14:33:12.861963+0700 | INFO | [Architect] Searched: scikit-learn latest version usage
+2026-06-07T14:33:12.861963+0700 | INFO | Architect search log:
+✓ Python ml best practices 2025
+✓ scikit-learn latest version usage
+2026-06-07T14:33:12.861963+0700 | INFO | [Architect] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:33:38.610715+0700 | INFO | [Architect] Nhận response — 3308 ký tự
+2026-06-07T14:33:38.610715+0700 | SUCCESS | ARCHITECT xong — 3308 ký tự
+2026-06-07T14:33:38.611233+0700 | INFO | Context Architect bị xóa. Chỉ giữ architecture.md
+2026-06-07T14:33:38.611233+0700 | INFO | =======================================================
+2026-06-07T14:33:38.611749+0700 | INFO | TESTER bắt đầu (không cần search — dùng architecture đã đủ)
+2026-06-07T14:33:38.611749+0700 | INFO | [Tester] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:34:04.112417+0700 | INFO | [Tester] Nhận response — 4018 ký tự
+2026-06-07T14:34:04.112938+0700 | SUCCESS | TESTER xong — 4004 ký tự
+2026-06-07T14:34:04.112938+0700 | INFO | Context Tester bị xóa.
+2026-06-07T14:34:04.113459+0700 | INFO | =======================================================
+2026-06-07T14:34:04.113459+0700 | INFO | DEVELOPER bắt đầu — lần thử 1/3
+2026-06-07T14:34:04.113979+0700 | INFO | [Developer-1] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:34:21.449590+0700 | INFO | [Developer-1] Nhận response — 2670 ký tự
+2026-06-07T14:34:21.450109+0700 | SUCCESS | DEVELOPER xong — 2656 ký tự
+2026-06-07T14:34:21.450109+0700 | INFO | Context Developer bị xóa.
+2026-06-07T14:34:21.450617+0700 | INFO | ==================================================
+2026-06-07T14:34:21.450617+0700 | INFO | COMPILER bắt đầu
+2026-06-07T14:34:21.456451+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/model_saver.py, src/predictor.py
+2026-06-07T14:34:21.456965+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T14:34:21.456965+0700 | INFO | Chạy pytest...
+2026-06-07T14:34:24.489560+0700 | WARNING | COMPILER: Test FAIL
+=================================== ERRORS ====================================
+___________________ ERROR collecting tests/test_pipeline.py ___________________
+tests\test_pipeline.py:10: in <module>
+src\predictor.py:4: in <module>
+E   NameError: name 'np' is not defined
+=========================== short test summary info ===========================
+ERROR tests/test_pipeline.py - NameError: name 'np' is not defined
+---
+============================= test session starts ============================...
+2026-06-07T14:34:24.490134+0700 | WARNING | dev_retries=1 < 5 → retry Developer
+2026-06-07T14:34:24.490733+0700 | INFO | =======================================================
+2026-06-07T14:34:24.490733+0700 | INFO | DEVELOPER bắt đầu — lần thử 2/3
+2026-06-07T14:34:24.490733+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T14:34:24.491254+0700 | INFO | [Developer-2] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:34:41.607781+0700 | INFO | [Developer-2] Nhận response — 2689 ký tự
+2026-06-07T14:34:41.608298+0700 | SUCCESS | DEVELOPER xong — 2675 ký tự
+2026-06-07T14:34:41.608298+0700 | INFO | Context Developer bị xóa.
+2026-06-07T14:34:41.608814+0700 | INFO | ==================================================
+2026-06-07T14:34:41.608814+0700 | INFO | COMPILER bắt đầu
+2026-06-07T14:34:41.615150+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/model_saver.py, src/predictor.py
+2026-06-07T14:34:41.615673+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T14:34:41.616187+0700 | INFO | Chạy pytest...
+2026-06-07T14:34:48.481988+0700 | WARNING | COMPILER: Test FAIL
+tests/test_pipeline.py::test_load_data FAILED                            [  8%]
+tests/test_pipeline.py::test_preprocess_data PASSED                      [ 16%]
+tests/test_pipeline.py::test_random_forest_trainer_fit_predict FAILED    [ 25%]
+tests/test_pipeline.py::test_model_evaluator_evaluate FAILED             [ 33%]
+tests/test_pipeline.py::test_model_saver_save_load FAILED                [ 41%]
+tests/test_pipeline.py::test_predictor_predict FAILED                    [ 50%]
+tests/test_pipeline....
+2026-06-07T14:34:48.482792+0700 | WARNING | dev_retries=2 < 5 → retry Developer
+2026-06-07T14:34:48.483319+0700 | INFO | =======================================================
+2026-06-07T14:34:48.483319+0700 | INFO | DEVELOPER bắt đầu — lần thử 3/3
+2026-06-07T14:34:48.483319+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T14:34:48.483841+0700 | INFO | [Developer-3] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:35:14.579059+0700 | INFO | [Developer-3] Nhận response — 2689 ký tự
+2026-06-07T14:35:14.579059+0700 | SUCCESS | DEVELOPER xong — 2675 ký tự
+2026-06-07T14:35:14.579059+0700 | INFO | Context Developer bị xóa.
+2026-06-07T14:35:14.579570+0700 | INFO | ==================================================
+2026-06-07T14:35:14.580094+0700 | INFO | COMPILER bắt đầu
+2026-06-07T14:35:14.586376+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/model_saver.py, src/predictor.py
+2026-06-07T14:35:14.587475+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T14:35:14.587475+0700 | INFO | Chạy pytest...
+2026-06-07T14:35:21.307350+0700 | WARNING | COMPILER: Test FAIL
+tests/test_pipeline.py::test_load_data FAILED                            [  8%]
+tests/test_pipeline.py::test_preprocess_data PASSED                      [ 16%]
+tests/test_pipeline.py::test_random_forest_trainer_fit_predict FAILED    [ 25%]
+tests/test_pipeline.py::test_model_evaluator_evaluate FAILED             [ 33%]
+tests/test_pipeline.py::test_model_saver_save_load FAILED                [ 41%]
+tests/test_pipeline.py::test_predictor_predict FAILED                    [ 50%]
+tests/test_pipeline....
+2026-06-07T14:35:21.308322+0700 | WARNING | dev_retries=3 < 5 → retry Developer
+2026-06-07T14:35:21.308844+0700 | INFO | =======================================================
+2026-06-07T14:35:21.308844+0700 | INFO | DEVELOPER bắt đầu — lần thử 4/3
+2026-06-07T14:35:21.308844+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T14:35:21.309367+0700 | INFO | [Developer-4] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:35:48.107212+0700 | INFO | [Developer-4] Nhận response — 2689 ký tự
+2026-06-07T14:35:48.107730+0700 | SUCCESS | DEVELOPER xong — 2675 ký tự
+2026-06-07T14:35:48.107730+0700 | INFO | Context Developer bị xóa.
+2026-06-07T14:35:48.107730+0700 | INFO | ==================================================
+2026-06-07T14:35:48.108247+0700 | INFO | COMPILER bắt đầu
+2026-06-07T14:35:48.113776+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/model_saver.py, src/predictor.py
+2026-06-07T14:35:48.114814+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T14:35:48.114814+0700 | INFO | Chạy pytest...
+2026-06-07T14:35:54.987584+0700 | WARNING | COMPILER: Test FAIL
+tests/test_pipeline.py::test_load_data FAILED                            [  8%]
+tests/test_pipeline.py::test_preprocess_data PASSED                      [ 16%]
+tests/test_pipeline.py::test_random_forest_trainer_fit_predict FAILED    [ 25%]
+tests/test_pipeline.py::test_model_evaluator_evaluate FAILED             [ 33%]
+tests/test_pipeline.py::test_model_saver_save_load FAILED                [ 41%]
+tests/test_pipeline.py::test_predictor_predict FAILED                    [ 50%]
+tests/test_pipeline....
+2026-06-07T14:35:54.988666+0700 | WARNING | dev_retries=4 < 5 → retry Developer
+2026-06-07T14:35:54.989188+0700 | INFO | =======================================================
+2026-06-07T14:35:54.989188+0700 | INFO | DEVELOPER bắt đầu — lần thử 5/3
+2026-06-07T14:35:54.989188+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T14:35:54.989188+0700 | INFO | [Developer-5] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T14:36:21.940908+0700 | INFO | [Developer-5] Nhận response — 2689 ký tự
+2026-06-07T14:36:21.940908+0700 | SUCCESS | DEVELOPER xong — 2675 ký tự
+2026-06-07T14:36:21.940908+0700 | INFO | Context Developer bị xóa.
+2026-06-07T14:36:21.941428+0700 | INFO | ==================================================
+2026-06-07T14:36:21.941959+0700 | INFO | COMPILER bắt đầu
+2026-06-07T14:36:21.947698+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/model_saver.py, src/predictor.py
+2026-06-07T14:36:21.948213+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T14:36:21.948213+0700 | INFO | Chạy pytest...
+2026-06-07T14:36:28.836301+0700 | WARNING | COMPILER: Test FAIL
+tests/test_pipeline.py::test_load_data FAILED                            [  8%]
+tests/test_pipeline.py::test_preprocess_data PASSED                      [ 16%]
+tests/test_pipeline.py::test_random_forest_trainer_fit_predict FAILED    [ 25%]
+tests/test_pipeline.py::test_model_evaluator_evaluate FAILED             [ 33%]
+tests/test_pipeline.py::test_model_saver_save_load FAILED                [ 41%]
+tests/test_pipeline.py::test_predictor_predict FAILED                    [ 50%]
+tests/test_pipeline....
+2026-06-07T14:36:28.837210+0700 | ERROR | dev_retries=5 >= 5 → ESCALATE về Architect (arch #2)
+2026-06-07T14:36:28.837730+0700 | ERROR | Pipeline kết thúc — hard stop hoặc timeout

@@ -185,3 +185,84 @@ tests/test_pipeline....
 2026-06-07T10:48:01.451107+0700 | INFO | DEVELOPER bắt đầu — lần thử 2/3
 2026-06-07T10:48:01.451634+0700 | DEBUG | Developer: không cần search cho lỗi này
 2026-06-07T10:48:01.451634+0700 | INFO | [Developer-2] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T10:48:18.856457+0700 | INFO | [Developer-2] Nhận response — 2807 ký tự
+2026-06-07T10:48:18.856977+0700 | SUCCESS | DEVELOPER xong — 2793 ký tự
+2026-06-07T10:48:18.856977+0700 | INFO | Context Developer bị xóa.
+2026-06-07T10:48:18.857496+0700 | INFO | ==================================================
+2026-06-07T10:48:18.857496+0700 | INFO | COMPILER bắt đầu
+2026-06-07T10:48:18.863748+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/model_saver.py, src/predictor.py
+2026-06-07T10:48:18.864269+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T10:48:18.864836+0700 | INFO | Chạy pytest...
+2026-06-07T10:48:26.544253+0700 | WARNING | COMPILER: Test FAIL
+tests/test_pipeline.py::test_load_data_valid_file PASSED                 [  7%]
+tests/test_pipeline.py::test_load_data_invalid_file PASSED               [ 14%]
+tests/test_pipeline.py::test_preprocess_data_valid_data PASSED           [ 21%]
+tests/test_pipeline.py::test_preprocess_data_invalid_data FAILED         [ 28%]
+tests/test_pipeline.py::test_random_forest_train ERROR                   [ 35%]
+tests/test_pipeline.py::test_random_forest_invalid_train FAILED          [ 42%]
+tests/test_pipeline....
+2026-06-07T10:48:26.545698+0700 | WARNING | dev_retries=2 < 5 → retry Developer
+2026-06-07T10:48:26.545698+0700 | INFO | =======================================================
+2026-06-07T10:48:26.546212+0700 | INFO | DEVELOPER bắt đầu — lần thử 3/3
+2026-06-07T10:48:26.546212+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T10:48:26.546212+0700 | INFO | [Developer-3] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T10:48:42.868524+0700 | INFO | [Developer-3] Nhận response — 2807 ký tự
+2026-06-07T10:48:42.869035+0700 | SUCCESS | DEVELOPER xong — 2793 ký tự
+2026-06-07T10:48:42.869035+0700 | INFO | Context Developer bị xóa.
+2026-06-07T10:48:42.869551+0700 | INFO | ==================================================
+2026-06-07T10:48:42.869551+0700 | INFO | COMPILER bắt đầu
+2026-06-07T10:48:42.875315+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/model_saver.py, src/predictor.py
+2026-06-07T10:48:42.875894+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T10:48:42.876411+0700 | INFO | Chạy pytest...
+2026-06-07T10:48:50.698166+0700 | WARNING | COMPILER: Test FAIL
+tests/test_pipeline.py::test_load_data_valid_file PASSED                 [  7%]
+tests/test_pipeline.py::test_load_data_invalid_file PASSED               [ 14%]
+tests/test_pipeline.py::test_preprocess_data_valid_data PASSED           [ 21%]
+tests/test_pipeline.py::test_preprocess_data_invalid_data FAILED         [ 28%]
+tests/test_pipeline.py::test_random_forest_train ERROR                   [ 35%]
+tests/test_pipeline.py::test_random_forest_invalid_train FAILED          [ 42%]
+tests/test_pipeline....
+2026-06-07T10:48:50.698934+0700 | WARNING | dev_retries=3 < 5 → retry Developer
+2026-06-07T10:48:50.698934+0700 | INFO | =======================================================
+2026-06-07T10:48:50.698934+0700 | INFO | DEVELOPER bắt đầu — lần thử 4/3
+2026-06-07T10:48:50.699453+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T10:48:50.699453+0700 | INFO | [Developer-4] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T10:49:06.891752+0700 | INFO | [Developer-4] Nhận response — 2807 ký tự
+2026-06-07T10:49:06.892302+0700 | SUCCESS | DEVELOPER xong — 2793 ký tự
+2026-06-07T10:49:06.892302+0700 | INFO | Context Developer bị xóa.
+2026-06-07T10:49:06.892820+0700 | INFO | ==================================================
+2026-06-07T10:49:06.892820+0700 | INFO | COMPILER bắt đầu
+2026-06-07T10:49:06.899120+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/model_saver.py, src/predictor.py
+2026-06-07T10:49:06.900156+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T10:49:06.900156+0700 | INFO | Chạy pytest...
+2026-06-07T10:49:15.350290+0700 | WARNING | COMPILER: Test FAIL
+tests/test_pipeline.py::test_load_data_valid_file PASSED                 [  7%]
+tests/test_pipeline.py::test_load_data_invalid_file PASSED               [ 14%]
+tests/test_pipeline.py::test_preprocess_data_valid_data PASSED           [ 21%]
+tests/test_pipeline.py::test_preprocess_data_invalid_data FAILED         [ 28%]
+tests/test_pipeline.py::test_random_forest_train ERROR                   [ 35%]
+tests/test_pipeline.py::test_random_forest_invalid_train FAILED          [ 42%]
+tests/test_pipeline....
+2026-06-07T10:49:15.351634+0700 | WARNING | dev_retries=4 < 5 → retry Developer
+2026-06-07T10:49:15.351634+0700 | INFO | =======================================================
+2026-06-07T10:49:15.352186+0700 | INFO | DEVELOPER bắt đầu — lần thử 5/3
+2026-06-07T10:49:15.352186+0700 | DEBUG | Developer: không cần search cho lỗi này
+2026-06-07T10:49:15.352186+0700 | INFO | [Developer-5] Gọi Ollama — model=qwen2.5-coder:14b, ctx=16384
+2026-06-07T10:49:32.218763+0700 | INFO | [Developer-5] Nhận response — 2807 ký tự
+2026-06-07T10:49:32.219280+0700 | SUCCESS | DEVELOPER xong — 2793 ký tự
+2026-06-07T10:49:32.219280+0700 | INFO | Context Developer bị xóa.
+2026-06-07T10:49:32.219804+0700 | INFO | ==================================================
+2026-06-07T10:49:32.219804+0700 | INFO | COMPILER bắt đầu
+2026-06-07T10:49:32.226068+0700 | INFO | Đã ghi các file nguồn: src/data_loader.py, src/preprocessor.py, src/model_trainer.py, src/model_evaluator.py, src/model_saver.py, src/predictor.py
+2026-06-07T10:49:32.226589+0700 | INFO | Đã ghi các file test: tests/test_pipeline.py
+2026-06-07T10:49:32.227110+0700 | INFO | Chạy pytest...
+2026-06-07T10:49:42.149005+0700 | WARNING | COMPILER: Test FAIL
+tests/test_pipeline.py::test_load_data_valid_file PASSED                 [  7%]
+tests/test_pipeline.py::test_load_data_invalid_file PASSED               [ 14%]
+tests/test_pipeline.py::test_preprocess_data_valid_data PASSED           [ 21%]
+tests/test_pipeline.py::test_preprocess_data_invalid_data FAILED         [ 28%]
+tests/test_pipeline.py::test_random_forest_train ERROR                   [ 35%]
+tests/test_pipeline.py::test_random_forest_invalid_train FAILED          [ 42%]
+tests/test_pipeline....
+2026-06-07T10:49:42.150241+0700 | ERROR | dev_retries=5 >= 5 → ESCALATE về Architect (arch #2)
+2026-06-07T10:49:42.150758+0700 | ERROR | Pipeline kết thúc — hard stop hoặc timeout

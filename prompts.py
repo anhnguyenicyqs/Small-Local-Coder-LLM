@@ -47,6 +47,7 @@ ARCHITECT_PROMPTS = {
 
     "ml": ARCHITECT_BASE + """
 Đặc thù ML Pipeline:
+- Trong thiết kế, tên class huấn luyện mô hình BẮT BUỘC phải đặt là `RandomForestTrainer` hoặc `ModelTrainer` (nằm trong file `src/model_trainer.py`), tuyệt đối KHÔNG đặt tên class trùng với class của sklearn là `RandomForestClassifier` để tránh xung đột tên (shadowing) gây lỗi đệ quy vô hạn.
 - Mô tả rõ: load data → preprocess → train → evaluate → save
 - Chỉ rõ model class, hyperparameter mặc định
 - Metric đánh giá: accuracy/F1/RMSE tùy bài toán
@@ -71,6 +72,7 @@ Quy tắc:
 - Bắt buộc có test cho edge case và lỗi
 - Hãy đóng gói code test bằng thẻ XML: `<file path="tests/test_solution.py">... code ...</file>`. Bạn có thể tạo nhiều file test nếu cần.
 - KHÔNG tự định nghĩa các class Mock (ví dụ: MockTrainer, MockPreprocessor, MockPredictor...) thay thế cho các class thật của mã nguồn trong file test. File test phải import và kiểm thử trực tiếp các class và hàm thật được sinh ra trong mã nguồn (ví dụ: import và gọi trực tiếp Trainer, Preprocessor, Predictor từ src). Chỉ sử dụng unittest.mock khi cần mock các tài nguyên ngoài như HTTP request hoặc API gọi ra ngoài.
+- Tránh đặt tên hoặc yêu cầu import các class trùng tên với các class của thư viện bên thứ ba nổi tiếng (ví dụ: scikit-learn). Thay vì `RandomForestClassifier` trong `src.model_trainer`, hãy thiết kế và đặt tên là `RandomForestTrainer` hoặc `ModelTrainer` để tránh xung đột tên (shadowing) gây lỗi đệ quy vô hạn.
 - Đảm bảo tất cả các biến (như X, y, data, file_path) được định nghĩa đầy đủ và rõ ràng trong phạm vi của từng test case hoặc fixture (ví dụ: thông qua fixture hoặc khai báo trực tiếp), tuyệt đối không sử dụng biến tự do chưa được định nghĩa trong phạm vi của hàm.
 - Hãy import đầy đủ tất cả các thư viện được sử dụng trong file test (ví dụ: `import pytest`, `import pandas as pd`, `import numpy as np`, `import os`, hoặc các class cụ thể từ sklearn như `from sklearn.ensemble import RandomForestClassifier` nếu bạn sử dụng chúng). Tuyệt đối không gọi bất kỳ thư viện, đối tượng, hàm hay class nào trong code test mà không khai báo câu lệnh import tương ứng ở đầu file.
 - Hãy import đúng các module/file nguồn theo cấu trúc thư mục trong tài liệu kiến trúc (ví dụ: `from src.data_loader import load_data`). Hệ thống sẽ tự động thêm thư mục workspace vào PYTHONPATH khi chạy pytest.
@@ -103,6 +105,7 @@ Test với HTML giả, test timeout handling, test missing element""",
 
     "ml": TESTER_BASE + """
 Đặc thù ML Pipeline:
+- Tên class huấn luyện mô hình BẮT BUỘC phải đặt là `RandomForestTrainer` (được import từ `src.model_trainer` như: `from src.model_trainer import RandomForestTrainer`), tránh đặt trùng tên với `RandomForestClassifier` của sklearn.
 - Dùng dataset nhỏ sinh bằng make_classification:
   from sklearn.datasets import make_classification
   X, y = make_classification(n_samples=50, n_features=4)

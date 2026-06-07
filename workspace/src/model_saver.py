@@ -1,20 +1,10 @@
 import joblib
-import os
+from typing import Any
 
-def save_model(model, file_path: str) -> None:
-    if model is None:
-        raise ValueError("Model cannot be None.")
-    
+def load_model(model_path: str) -> Any:
     try:
-        joblib.dump(model.model, file_path)
-    except Exception as e:
-        raise Exception(f"Error saving model to {file_path}: {e}")
-
-def load_model(file_path: str):
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"File {file_path} not found.")
+        model = joblib.load(model_path)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Model file {model_path} does not exist.")
     
-    try:
-        return joblib.load(file_path)
-    except Exception as e:
-        raise Exception(f"Error loading model from {file_path}: {e}")
+    return model

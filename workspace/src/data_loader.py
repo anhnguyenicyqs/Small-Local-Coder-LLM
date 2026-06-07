@@ -1,7 +1,9 @@
 import pandas as pd
 
-def load_data(file_path: str) -> pd.DataFrame:
-    try:
-        return pd.read_csv(file_path)
-    except FileNotFoundError:
-        raise FileNotFoundError(f"File {file_path} not found.")
+def load_iris_data():
+    # Load Iris dataset from sklearn.datasets
+    from sklearn.datasets import load_iris
+    iris = load_iris()
+    df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+    df['target'] = iris.target
+    return df
