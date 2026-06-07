@@ -1,0 +1,13 @@
+langgraph>=0.2.0
+langchain-core>=0.3.0
+requests>=2.31.0
+loguru>=0.7.0
+pytest>=8.0.0
+pytest-timeout>=2.3.0
+
+# Tùy project type — cài thêm khi cần:
+# fastapi:   pip install fastapi httpx
+# flask:     pip install flask
+# pipeline:  pip install pandas numpy
+# scraping:  pip install beautifulsoup4 playwright responses
+# ml:        pip install scikit-learn joblib
