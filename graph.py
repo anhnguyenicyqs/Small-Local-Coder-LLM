@@ -59,14 +59,14 @@ def router_node(state: AgentState) -> dict:
     retries = state["dev_retries"]
     arch_retries = state["arch_retries"]
 
-    if retries >= 3:
+    if retries >= 5:
         if arch_retries < 2:
-            logger.error(f"dev_retries={retries} >= 3 → ESCALATE về Architect (arch #{arch_retries+1})")
+            logger.error(f"dev_retries={retries} >= 5 → ESCALATE về Architect (arch #{arch_retries+1})")
             return {"dev_retries": 0, "arch_retries": arch_retries + 1}
         else:
             logger.critical("arch_retries >= 2 → HARD STOP")
     else:
-        logger.warning(f"dev_retries={retries} < 3 → retry Developer")
+        logger.warning(f"dev_retries={retries} < 5 → retry Developer")
     return {}
 
 
@@ -78,7 +78,7 @@ def after_compiler(state: AgentState) -> str:
 def after_router(state: AgentState) -> str:
     if state["dev_retries"] == 0 and state["arch_retries"] > 0:
         return "hard_stop" if state["arch_retries"] >= 2 else "re_architect"
-    return "retry_dev" if state["dev_retries"] < 3 else "hard_stop"
+    return "retry_dev" if state["dev_retries"] < 5 else "hard_stop"
 
 
 # ── Build & run ───────────────────────────────────────────────────────────────
@@ -110,11 +110,12 @@ def build_graph():
     return g.compile()
 
 
-def run(task: str, project_type: str = None) -> AgentState:
+def run(task: str, project_type: str = None, output_format: str = "both") -> AgentState:
     app = build_graph()
     initial: AgentState = {
         "task":                  task,
         "project_type":          project_type or "",
+        "output_format":         output_format,
         "architecture":          "",
         "test_code":             "",
         "source_code":           "",

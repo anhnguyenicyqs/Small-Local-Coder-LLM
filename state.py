@@ -1,11 +1,13 @@
 from typing import TypedDict, Literal
 
 ProjectType = Literal["fastapi", "flask", "pipeline", "scraping", "ml", "algorithm"]
+OutputFormat = Literal["multi", "ipynb", "both"]
 
 class AgentState(TypedDict):
     # ── Input ──────────────────────────────────────────────
     task: str
     project_type: ProjectType
+    output_format: OutputFormat
 
     # ── Artifacts ──────────────────────────────────────────
     architecture: str

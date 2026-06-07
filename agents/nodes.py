@@ -176,15 +176,22 @@ def developer_node(state: AgentState) -> dict:
     system = DEVELOPER_PROMPTS.get(ptype, DEVELOPER_PROMPTS["algorithm"])
 
     error_section = ""
+    previous_code_section = ""
     if latest_error:
         error_section = (
             f"\n\n⚠️ LỖI LẦN TRƯỚC (phải sửa):\n{latest_error}"
             f"\nPhân tích lỗi và sửa ĐÚNG chỗ đó."
         )
+        if state.get("source_code"):
+            previous_code_section = (
+                f"\n\nCode đã viết lần trước:\n```python\n{state['source_code']}\n```"
+                f"\nHãy dựa trên code lần trước để chỉnh sửa và khắc phục lỗi."
+            )
 
     user_msg = (
         f"Tài liệu kiến trúc:\n{state['architecture']}\n\n"
         f"File test cần pass:\n```python\n{state['test_code']}\n```"
+        f"{previous_code_section}"
         f"{error_section}"
         f"{search_section}"
         f"\nViết code hoàn chỉnh để pass toàn bộ test trên."
